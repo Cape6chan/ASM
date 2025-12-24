@@ -1,0 +1,28 @@
+mov ra 1
+mov rb 1
+
+LOOP
+int
+inc rb
+cmp rb < 5
+jmp LOOP
+jmp EXIT
+
+
+
+
+
+
+DBG
+dbg
+jmp EXIT
+
+
+
+
+EXIT
+mov ra 0
+mov rb 0
+mov rc 0
+mov rd 0
+int
