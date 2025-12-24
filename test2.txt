@@ -1,0 +1,26 @@
+jmp MAIN
+
+EXIT
+    mov ra 0
+    mov rb 0
+    mov rc 0
+    mov rd 0
+    int
+STD_PRT_VARS
+    mov ra 1
+    mov rb 0
+    mov rc 0
+    mov rd 0
+    int
+    ret
+
+
+MAIN
+    mov i 0
+    call STD_PRT_VARS
+    MAIN_LOOP
+        inc i
+        cmp i<10
+        jmp MAIN_LOOP
+
+    call STD_PRT_VARS

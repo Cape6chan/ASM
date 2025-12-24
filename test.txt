@@ -8,17 +8,9 @@ cmp rb < 5
 jmp LOOP
 jmp EXIT
 
-
-
-
-
-
 DBG
 dbg
 jmp EXIT
-
-
-
 
 EXIT
 mov ra 0

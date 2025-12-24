@@ -1,0 +1,65 @@
+jmp INIT
+
+SYS
+    pop rd
+    pop rc
+    pop rb
+    pop ra
+    int
+    ret
+
+EXIT
+    push 0, 0, 0, 0
+    call SYS
+    ret
+
+STD_REGS
+    push 1, 1, 0, 0
+    call SYS
+    ret
+
+STD_REG
+    pop rc
+    push 1, 1, rc, 0
+    call SYS
+    ret
+
+STD_PILES
+    push 1, 0, 0, 0
+    call SYS
+    ret
+
+STD_PRTN
+    pop rd
+    push 1, 2, 0, rd
+    call SYS
+    ret
+
+STD_PRTC
+    pop rd
+    push 1, 2, 1, rd
+    call SYS
+    ret
+
+STD_ENDL
+    push 1, 2, 1, ENDL
+    call SYS
+    ret
+
+STD_PRTF
+    pop ra
+    cmp ra = -1 ret
+
+    push ra
+    call STD_PRTC
+
+    jmp STD_PRTF
+
+INIT
+    mov ENDL 61
+    call MAIN
+
+MAIN
+    push -1,ENDL,24,17,0,17,1,8,11,63,3,17,0,3,13,0,19,18,63,4,7,19,63,13,14,63,4,12,14,2,11,4,47
+    call STD_PRTF
+    call EXIT
