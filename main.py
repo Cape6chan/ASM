@@ -482,7 +482,7 @@ class Interpreter:
             if ret == -1: break
 
 def tokenizefile(file):
-    with open(file, 'r') as f:
+    with open('script/'+file, 'r') as f:
         source = f.read()
     return tokenize(source), source
 
